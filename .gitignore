@@ -1,0 +1,6 @@
+#Compiled binaries
+*.exe
+# this is the exe that my go build outputs when I cross-compile
+ctfd_watcher_linux
+
+.idea/*
