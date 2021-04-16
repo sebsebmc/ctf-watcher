@@ -51,7 +51,7 @@ func init() {
 }
 
 func writeCtfFile(cmd *cobra.Command, args []string) {
-	os.MkdirAll(args[3], os.FileMode(os.O_RDWR))
+	os.MkdirAll(args[3], 0750)
 	shouldTest, _ := cmd.Flags().GetBool("test")
 	shouldReplace, _ := cmd.Flags().GetBool("force")
 

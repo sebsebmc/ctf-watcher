@@ -28,7 +28,7 @@ var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Displays a list of challenges",
 	Long:  `Lists all of the challenges in the CTF`,
-	Run:   pull,
+	Run:   list,
 	Args:  cobra.NoArgs,
 }
 
@@ -46,7 +46,7 @@ func init() {
 	// listCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
-func pull(cmd *cobra.Command, args []string) {
+func list(cmd *cobra.Command, args []string) {
 	creds, err := lib.GetCreds()
 	if err != nil {
 		if os.IsNotExist(err) {
