@@ -21,5 +21,9 @@ func GetCreds() (*Creds, error) {
 	if len(lines) < 3 {
 		return nil, fmt.Errorf("Creds file is corrupted")
 	}
-	return &Creds{lines[0], lines[1], lines[2]}, nil
+	return &Creds{
+		Url:      lines[0],
+		Username: lines[1],
+		Password: lines[2],
+	}, nil
 }

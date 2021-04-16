@@ -68,6 +68,8 @@ func writeCtfFile(cmd *cobra.Command, args []string) {
 	flags := os.O_RDWR | os.O_CREATE
 	if !shouldReplace {
 		flags |= os.O_EXCL
+	} else {
+		flags |= os.O_TRUNC
 	}
 	fh, err := os.OpenFile(settingsFile, flags, 0666)
 	if err != nil {
